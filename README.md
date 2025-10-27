@@ -25,4 +25,4 @@ git clone https://github.com/[ditt-github]/moment5-[dittnamn].git
 
 ## Publicerad webbplats
 
-https://ardalan-miun.netlify.app/
+https://sr-schedule.netlify.app
