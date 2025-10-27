@@ -20,7 +20,7 @@ Applikationen hämtar data från Sveriges Radios öppna API och visar tillgängl
 
 ## Hur man klonar repot
 ```bash
-git clone https://github.com/[ditt-github]/moment5-[dittnamn].git
+git clone https://github.com/ardalansale/sr-radio.git
 ```
 
 ## Publicerad webbplats
