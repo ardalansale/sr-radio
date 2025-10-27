@@ -1,2 +1,28 @@
-# sr-radio
-This application fetches data from the Swedish Radio (Sveriges Radio) open API and displays available radio channels. Users can click on a channel to view today's program schedule.
+# DT084G – Laboration 5: Sveriges Radio Tablå-app
+
+## Beskrivning
+
+Applikationen hämtar data från Sveriges Radios öppna API och visar tillgängliga radiokanaler. Användaren kan klicka på en kanal för att se dagens programtablå.
+
+## Funktionalitet
+
+* Visar lista över radiokanaler
+* Klick på kanal visar programtablå för den kanalen
+* Visar programtitel, undertitel och beskrivning
+* Hämtar data från Sveriges Radios API med `fetch()`
+
+## Tekniker
+
+* JavaScript
+* Fetch API
+* DOM-manipulation
+* JSON
+
+## Hur man klonar repot
+```bash
+git clone https://github.com/[ditt-github]/moment5-[dittnamn].git
+```
+
+## Publicerad webbplats
+
+https://ardalan-miun.netlify.app/
