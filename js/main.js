@@ -69,8 +69,21 @@ function showSchedule(channelId) {
         return response.json(); // Omvandlar svaret från API:et till JSON
     })
     .then(function(data) {
-        var program = data.schedule; // Sparar listan med program i en variabel
-        displayPrograms(program, selectedChannel.name); // Anropar en ny funktion som visar program 
+        
+var now = new Date(); // Hämtar aktuell tid
+var futurePrograms = []; // Tom array som ska innehålla program som ännu inte är slut
+
+// (NY!) Loop som går igenom alla program i tablån
+for (var i = 0; i < data.schedule.length; i++) {
+    var end = parseSRDate(data.schedule[i].endtimeutc); // Gör om sluttiden till ett Date-objekt
+    if (end > now) { // Kollar om programmet fortfarande pågår eller kommer senare
+        futurePrograms.push(data.schedule[i]); // Lägger till programmet i arrayen futurePrograms
+    }
+}
+
+displayPrograms(futurePrograms, selectedChannel.name); // Anropar en ny funktion som visar program
+
+
     });
 }
 
@@ -93,7 +106,7 @@ function displayPrograms(programs, channelName) {
             minute: "2-digit"
         });
 
-        // Bygger upp HTML-strukturen för varje program
+        // (NY!) Bygger upp HTML-strukturen för varje program
         html += "<article>"; // || "" - 
         html += "<h3>" + program.title + "</h3>"; // Titel på programmet
         html += "<h4>" + (program.subtitle || "") + "</h4>"; // Underrubrik (|| "" för att undvika att det står undefined om något saknas)
