@@ -94,9 +94,11 @@ function displayPrograms(programs, channelName) {
         });
 
         // Bygger upp HTML-strukturen för varje program
-        html += "<article>";
+        html += "<article>"; // || "" - 
         html += "<h3>" + program.title + "</h3>"; // Titel på programmet
+        html += "<h4>" + (program.subtitle || "") + "</h4>"; // Underrubrik (|| "" för att undvika att det står undefined om något saknas)
         html += "<h5>" + startTime + " - " + endTime + "</h5>"; // Start- och sluttid
+        html += "<p>" + (program.description || "") + "</p>"; // Beskrivning (|| "" för att undvika att det står undefined om något saknas)
         html += "</article>";
     }
 
